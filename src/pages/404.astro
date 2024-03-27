@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="FindMyRoomie">
+  
+    <div class="fixed flex mx-40 w-screen mb-40 justify-between">
+    <a href="/" class="relative mt-20 text-2xl font-bold">FindMyRoomie</a>
+    <Button class1="relative mr-80 mt-20 bg-black" url="/" text="Back to home" />
+  </div>
+
+  <main class="flex flex-col items-center justify-center h-screen">
+    <h1
+      class="text-9xl grad tracking-thight font-bold text-transparent bg-clip-text"
+    >
+      404
+    </h1>
+    <h3 class="mt-4 text-myBlack font-bold">Page not found.</h3>
+
+    <span class="text-myBlack mt-2 text-sm">Oops... You got us!. It seems there is nothing to see here.</span>
+  </main>
+</Layout>
+
+<style>
+  .grad {
+    background-image: var(--accent-gradient-text);
+  }
+</style>

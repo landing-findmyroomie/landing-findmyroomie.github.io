@@ -1,0 +1,66 @@
+---
+import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import x_icon from "../assets/x_icon.png";
+import lin_icon from "../assets/facebook_icon.png";
+import fb_icon from "../assets/linkedin_icon.png";
+
+---
+
+<div class="flex flex-col mt-20 mb-10 mx-40 relative container1">
+  <h1
+    class="copy self-center bg-gradient-to-b from-white from-100% to-myBlack to-0% py-2 mb-5 text-4xl tracking-thight font-bold text-transparent bg-clip-text"
+  >
+    Live, explore and enjoy with whomever <br /> you like, wherever you like.
+  </h1>
+  <p class="self-center font-light text-myBlack sm:text-xl dark:text-gray-400 text-small">
+    The first roomate search tool you'll ever know. The only one you'll ever
+    need.
+  </p>
+  <div class="flex flex-col self-center mt-20 w-40">
+    <Button class1="bg-transparent border border-myBlack" url="/waitlist"/>
+  </div>
+  <div class="h-0.5 mt-20 bg-divider"></div>
+  <div class="flex flex-row justify-between items-center">
+    <div class="flex flex-row text-md mt-4 gap-6 space-sm">
+      <span class="text-text cursor-pointer">&copy; 2024 FindMyRoomie Inc.</span>
+      <span class="text-text cursor-pointer">Privacy Policy</span>
+      <span class="text-text cursor-pointer">Terms of Use</span>
+    </div>
+    <div class="flex flex-row mt-4 gap-6 space-sm">
+        <Image class="h-7 w-auto cursor-pointer img-sm" src={x_icon} alt="X icon" loading="eager" />
+        <Image class="h-7 w-auto cursor-pointer img-sm" src={lin_icon} alt="LinkedIn icon" loading="eager" />
+        <Image class="h-7 w-auto cursor-pointer img-sm" src={fb_icon} alt="Facebook icon" loading="eager" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .copy {
+    text-align: center;
+    width: 80vw;
+  }
+
+  @media (max-width: 600px) {
+    /* TODO: Cambiar estos estilos */
+    .text-small {
+      text-align: center;
+      width: 90vw !important;
+    }
+
+    .container1 {
+      margin-left: 7vw;
+      width: 90vw !important;
+    }
+
+    .space-sm {
+      gap: 0.75rem;
+      font-size: 2vw;
+    }
+
+    .img-sm {
+      height:  3vw;
+      width: auto;
+    }
+  }
+</style>

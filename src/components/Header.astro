@@ -1,0 +1,18 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="flex mx-40 mt-18 mb-40 justify-between">
+  <a href="/" class="text-2xl font-bold">FindMyRoomie</a>
+  <Button class1="bg-black" url="/waitlist"/>
+</div>
+
+<style>
+  @media (max-width: 600px) {
+    .flex {
+      width: 90vw;
+      margin-left: 8vw;
+      margin-top: 6vh;
+    }
+  }
+</style>

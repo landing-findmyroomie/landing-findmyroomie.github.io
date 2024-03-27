@@ -1,0 +1,71 @@
+---
+import Card from "../components/Card.astro";
+import image4 from "../assets/image 4.png";
+import iconLock from "../assets/icon _Lock Shield_.png";
+import image5 from "../assets/image 5.png";
+import image6 from "../assets/Group 6.png";
+import iconHome from "../assets/icon _Home_.png";
+---
+
+<div class="flex flex-col mt-32 mx-40 container1">
+  <h2
+    class="w-full self-center grad py-2 mb-5 text-5xl tracking-thight font-bold text-transparent bg-clip-text"
+  >
+    Everything you need. <br /> Nothing you don't.
+  </h2>
+  <p class="text-xl text-myBlack">
+    Everything you need at your fingertips, on a single platform.
+  </p>
+
+  <div class="grid grid-cols-3 gap-10 mt-16 container2">
+    <Card
+      img={image4}
+      alts=""
+      title="Customized search"
+      body="Filter your searches usaing our customized search and find what you've always been looking for."
+    />
+    <Card
+      img={iconLock}
+      alts=""
+      title="Guaranteed safety"
+      body="Our platform cares about your security. All profiles are verified to ensure a safe and reliable experience."
+    />
+    <Card
+      img={image5}
+      alts=""
+      title="Easy communication"
+      body="With our integrated chat you can easily communicate with potential colleagues quickly and securely."
+    />
+    <Card
+      img={image6}
+      alts=""
+      title="You set the rules"
+      body="We not only provide housing search, we leave it up to you to choose who you want to live with. Filter your searches based on the profile of your potential new roommates."
+      classA="span"
+    />
+    <Card
+      img={iconHome}
+      alts=""
+      title="MyHome"
+      body="MyHome is a space where you can manage your home once you have found it. It is designed to manage household chores, bills and many more new features. (Cooming soon)"
+    />
+  </div>
+</div>
+
+<style>
+  .grad {
+    background-image: var(--accent-gradient-text);
+  }
+
+  @media (max-width: 600px) {
+    .container1 {
+      flex-direction: column;
+      width: 80vw;
+      margin-left: 12vw;
+    }
+
+    .grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+</style>

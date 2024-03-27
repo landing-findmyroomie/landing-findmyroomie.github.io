@@ -1,0 +1,50 @@
+---
+import Card from "./Card.astro";
+---
+
+<div class="mt-20 mx-40">
+  <div class="ambience h-1.5"></div>
+  <div class="grid grid-cols-2 gap-40 mt-20 container2">
+    <Card
+      title='"After searching on other platforms and even on social networks,thanks to FindMyRoomie I have finally been able to find a roommate who shares my tastes and with whom I share a very good coexistence."'
+      body="Maria, 20 years old. Student at Universidad de Jaén."
+      classTitle="text-sm italic"
+      classText="self-center"
+      classA="feed"
+    />
+    <Card
+      title=`"Thanks to FindMyRoomie I found an apartment with nice roommates, located where I wanted and at a fair price. I would recommend this platform to all students in Spain."`
+      body="Antonio, 18 years old. Student at Universidad de Jaén."
+      classTitle="text-sm italic"
+      classText="self-center"
+      classA="feed"
+    />
+  </div>
+  <div class="ambience h-1.5 mt-20"></div>
+</div>
+
+<style>
+  .ambience {
+    background: radial-gradient(
+      50% 50% at 50% 0%,
+      rgba(14, 146, 176, 0.5) 0%,
+      rgba(9, 9, 11, 0) 100%
+    );
+  }
+
+  @media (max-width: 600px) {
+    .container1 {
+      flex-direction: column;
+      width: 80vw;
+      margin-left: 5rem;
+    }
+
+    .grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .container2 {
+      margin-left: -7rem;
+    }
+  }
+</style>

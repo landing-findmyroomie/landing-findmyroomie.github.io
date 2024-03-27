@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="z-0 fixed ambience w-screen min-h-screen">
+      <br />
+    </div>
+    <slot class="slot" />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 14, 146, 176;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 0, 0, 0;
+    --accent-light-mine: 14, 50, 176;
+    --white-mine: 255, 255, 255;
+    --accent-text: 132, 129, 139;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light-mine)) 50%,
+      white 60%
+    );
+
+    --accent-gradient-text: linear-gradient(
+      135deg,
+      rgb(var(--white-mine)),
+      rgb(var(--accent-text)) 50%
+    );
+  }
+  html {
+    font-family: Cabin, system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+    color-scheme: dark light;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  .ambience {
+    width: 100%;
+    background: radial-gradient(
+      75% 50% at 50% 0%,
+      rgba(14, 146, 176, 0.5) 0%,
+      rgba(9, 9, 11, 0) 100%
+    );
+  }
+</style>
