@@ -1,7 +1,421 @@
 ---
+import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
+import Modal from "../components/Modal.astro";
 ---
 
 <Layout title="Join the Waitlist">
+  <div class="flex flex-col container1">
+    <h1
+      class="relative grad copy self-center py-2 mt-10 mb-5 text-7xl text-transparent tracking-thight font-bold bg-clip-text"
+    >
+      We need your help.
+    </h1>
+    <p
+      class="relative self-center font-light text-myBlack sm:text-2xl dark:text-gray-400 text-copy"
+    >
+      Complete the survey to help us improve our platform and get early access
+      to the Beta version.
+    </p>
 
+    <!-- Form -->
+    <div class="mt-20 w-96 self-center relative">
+      <form>
+        <div class="mb-16">
+          <span class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+            >Email Address</span
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="you@company.com"
+            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+          />
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >How old are you?</span
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="age-1"
+              type="radio"
+              value=""
+              name="radio"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="age-1" class="ms-2 text-sm text-text">Under 18</label>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="age-2"
+              type="radio"
+              value=""
+              name="radio"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="age-2" class="ms-2 text-sm text-text"
+              >Between 18 and 25</label
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="age-3"
+              type="radio"
+              value=""
+              name="radio"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="age-3" class="ms-2 text-sm text-text"
+              >Between 25 and 35</label
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="age-4"
+              type="radio"
+              value=""
+              name="radio"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="age-4" class="ms-2 text-sm text-text">25 or more</label>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >What is your job?</span
+            >
+          </div>
+          <select
+            id="jobs"
+            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+          >
+            <option selected>Choose a Job</option>
+            <option value="Student">Student</option>
+            <option value="StudentJob">Student working</option>
+            <option value="Work">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >Do you currently reside in Spain?
+            </span>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="spain-1"
+              type="radio"
+              value=""
+              name="radio1"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="spain-1" class="ms-2 text-sm text-text">Yes</label>
+          </div>
+
+          <div class="flex items-center mb-4">
+            <input
+              id="spain-2"
+              type="radio"
+              value=""
+              name="radio1"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="spain-2" class="ms-2 text-sm text-text">No</label>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >What is your current housing situation?</span
+            >
+          </div>
+          <select
+            id="housing"
+            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+          >
+            <option selected>Choose a Housing situation</option>
+            <option value="alone">Alone</option>
+            <option value="family">With my family</option>
+            <option value="roommates">With roommates</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-16">
+          <span class="text-sm text-gray-600 dark:text-gray-400"
+            >If you are currently studying and living with roomates ...</span
+          >
+          <div class="flex justify-between mb-2 mt-1">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >How did you find such housing?</span
+            >
+          </div>
+          <select
+            id="housefind"
+            class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+          >
+            <option selected>Choose a Find Method</option>
+            <option value="alone">Social networks (X, Instagram, etc.)</option>
+            <option value="family"
+              >Housing portals (Idealista, Fotocasa, etc.)</option
+            >
+            <option value="roommates"
+              >Specific apps for shared housing search</option
+            >
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2 mt-1">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >What is your main reason for seeking shared housing?</span
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="reduceexp"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="reduceexp" class="ms-2 text-sm text-text"
+              >Reduce expenses</label
+            >
+          </div>
+          <div class="flex items-center">
+            <input
+              id="searchCompany"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="searchCompany" class="ms-2 text-sm text-text"
+              >Search for company</label
+            >
+          </div>
+
+          <div class="flex items-center mt-4">
+            <input
+              id="ot"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="ot" class="ms-2 text-sm text-text">Other</label>
+          </div>
+          <textarea
+            id="textarea1"
+            rows="4"
+            class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write other reasons here"></textarea>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2 mt-1">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >What features do you consider most important when looking for
+              shared housing?</span
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="location"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="location" class="ms-2 text-sm text-text">Location</label
+            >
+          </div>
+          <div class="flex items-center">
+            <input
+              id="roomsize"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="roomsize" class="ms-2 text-sm text-text"
+              >Room size</label
+            >
+          </div>
+
+          <div class="flex items-center">
+            <input
+              id="roomprice"
+              type="checkbox"
+              value=""
+              class="mt-4 w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="roomprice" class="mt-4 ms-2 text-sm text-text"
+              >Price</label
+            >
+          </div>
+
+          <div class="flex items-center mt-4">
+            <input
+              id="other"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="other" class="ms-2 text-sm text-text">Other</label>
+          </div>
+          <textarea
+            id="textarea2"
+            rows="4"
+            class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write other features here"></textarea>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2 mt-1">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >What features would you consider most important in a roommate
+              search platform?</span
+            >
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="easyuse"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="easyuse" class="ms-2 text-sm text-text"
+              >Easy to use</label
+            >
+          </div>
+          <div class="flex items-center">
+            <input
+              id="safety"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="safety" class="ms-2 text-sm text-text">Safety</label>
+          </div>
+
+          <div class="flex items-center">
+            <input
+              id="variety"
+              type="checkbox"
+              value=""
+              class="mt-4 w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="variety" class="mt-4 ms-2 text-sm text-text"
+              >Variety of options</label
+            >
+          </div>
+
+          <div class="flex items-center">
+            <input
+              id="filters"
+              type="checkbox"
+              value=""
+              class="mt-4 w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="filters" class="mt-4 ms-2 text-sm text-text"
+              >Advanced search filters</label
+            >
+          </div>
+
+          <div class="flex items-center mt-4">
+            <input
+              id="otherFeatures"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 text-gray-600 dark:text-gray-400 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+            />
+            <label for="otherFeatures" class="ms-2 text-sm text-text"
+              >Other</label
+            >
+          </div>
+          <textarea
+            id="textarea3"
+            rows="4"
+            class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write other features you'll like to see here"
+          ></textarea>
+        </div>
+
+        <div class="mb-16">
+          <div class="flex justify-between mb-2">
+            <span class="text-md text-gray-600 dark:text-gray-400"
+              >Would you consider using a new online platform to find roommates
+              or advertise your home to others?
+            </span>
+          </div>
+          <div class="flex items-center mb-4">
+            <input
+              id="usage-y"
+              type="radio"
+              value=""
+              name="radio2"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="usage-y" class="ms-2 text-sm text-text">Yes</label>
+          </div>
+
+          <div class="flex items-center mb-4">
+            <input
+              id="usage-n"
+              type="radio"
+              value=""
+              name="radio2"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="usage-n" class="ms-2 text-sm text-text">No</label>
+          </div>
+
+          <div class="flex items-center mb-4">
+            <input
+              id="usage-p"
+              type="radio"
+              value=""
+              name="radio2"
+              class="w-4 h-4 text-gray-600 focus:ring-indigo-100"
+            />
+            <label for="usage-p" class="ms-2 text-sm text-text">Probably</label>
+          </div>
+        </div>
+
+        <div class="flex mb-10 justify-center">
+          <Modal />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <style>
+    .copy {
+      text-align: center;
+      width: 80vw;
+    }
+
+    .grad {
+      background-image: var(--accent-gradient-text);
+    }
+
+    @media (max-width: 600px) {
+      .container1 {
+        width: 100vw;
+        margin-left: 3vw;
+      }
+
+      .text-copy {
+        text-align: center;
+        width: 90vw;
+      }
+    }
+  </style>
 </Layout>
